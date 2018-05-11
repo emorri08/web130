@@ -1,0 +1,75 @@
+@import "bourbon/bourbon";
+@import "colors";
+@import "grid";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav > ul.closed > li {
+    display: none;
+    &#mobile-menu {
+        display: block;
+        background-color: $ltBlue;
+    }
+}
+
+nav {
+    padding: 1px;
+    background: $ltBlue;
+}
+
+ul {
+    list-style: none;
+}
+
+ul {
+    li {
+//        position: relative;
+        padding: 5px 15px;
+    }
+}
+
+a {
+    color:$white;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+}
+
+li.hasSub {
+    ul.subnav {
+        li {
+            display: none;
+        }
+    }
+}
+
+nav {
+    #mobileNav {
+        @include size(medium) {
+            display: none;
+        }
+        @include size(large) {
+            display: none;
+        }
+    }
+}
+
+nav {
+    #mainNav {
+        @include size(small) {
+            display: none;
+        }
+        li {
+            @include size(medium) {
+                display: inline-block;
+            }
+            @include size(large) {
+                display: inline-block;
+            }
+        }
+    }
+}
