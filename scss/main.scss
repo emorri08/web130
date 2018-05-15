@@ -23,10 +23,14 @@ ul, li {
 }
 
 .nav {
+    ul:hover li {
+        display:block;
+    }
     li {
         font-family: 'Inconsolata', monospace;
         text-align: left;
-        display: block;
+//        display: block;
+        display:none;
         border-bottom:1px solid $white;
         @include size(large) {
             font-size: 22px;
@@ -40,6 +44,7 @@ ul, li {
             display: inline-block;
             font-size: 20px;
             line-height: 30px;
+            border: 1px solid $white;
         }
 
     }
