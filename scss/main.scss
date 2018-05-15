@@ -1,0 +1,176 @@
+@import "bourbon/bourbon";
+@import "grid";
+@import "colors";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: $white;
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    ul {
+        background: $ltBlue;
+        text-align: center;
+    }
+}
+
+.nav {
+    li {
+        font-family: 'Inconsolata', monospace;
+        text-align: left;
+        display: block;
+        border-bottom:1px solid $white;
+        @include size(large) {
+            font-size: 22px;
+            line-height: 33px;
+            width: 130px;
+            display: inline-block;
+            margin-right: -4px;
+            border: 1px solid $white;
+        }
+        @include size(medium) {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+    }
+    li:hover {
+        background: $dkBlue;
+    }
+}
+
+.nav {
+    a {
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 27px;
+        color: $white;
+        display: block;
+        padding-left: 15px;
+        transition: .3s background-color;
+        padding: 8px 10px;
+        text-align: center;
+        
+    }
+    a:hover {
+        background: $dkBlue;
+    }
+}
+
+.nav {
+    li {
+        li {
+            font-size: 18px;
+            line-height: 27px;
+            display: block;
+            border: none;
+        }
+    }
+}
+
+.nav > ul > li {
+    @include size(large) {
+        text-align: center;
+    }
+}
+
+.nav > ul > li > a {
+    @include size(large){
+        padding-left: 0;
+    }
+}
+
+.nav {
+    li {
+        ul {
+            display: block;
+            width: inherit;
+            @include size(medium) {
+                position: absolute;
+                display:none;
+            }
+            @include size(large) {
+                position: absolute;
+                display:none;
+            }
+        }
+    }
+}
+
+.nav {
+    li:hover {
+        background: $dkBlue;
+        ul {
+            display:block;
+        }
+//        @include size(medium) {
+//            display:inline-block;
+//        }
+    }
+}
+
+.nav {
+    li {
+        ul {
+            li {
+                display:block;
+                font-size: 16px;
+                line-height:24px;
+            }
+        }
+    }
+}
+
+li:hover {
+    @include size(medium) {
+        display: inline-block;
+    }
+}
+
+.nav {
+    ul {
+        li.menu {
+            display:block;
+            @include size(medium) {
+                display: none;
+            }
+            @include size(large) {
+                display: none;
+            }
+        }
+    }
+}
+
+#hamburger {
+    float: left;
+    margin: 2px -25px 2px 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/hamburger.png);
+    background-size:cover;
+}
+
+
+// for javascript
+
+#mobile-menu {
+    display: block;
+    @include size(medium-up){
+        display: none;
+    }
+}
+
+li.products {
+    > a {
+        border-bottom: 1px solid $white;
+    }
+}
