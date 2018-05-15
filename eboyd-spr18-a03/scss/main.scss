@@ -1,75 +1,150 @@
 @import "bourbon/bourbon";
 @import "colors";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 @import "grid";
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+@import "util";
 
 html, body {
     margin: 0;
     padding: 0;
-    
 }
 
-nav > ul.closed > li {
-    display: none;
-    &#mobile-menu {
-        display: block;
-        background-color: $ltBlue;
-    }
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav {
-    padding: 1px;
-    background: $ltBlue;
-}
-
-ul {
-    list-style: none;
-}
-
-ul {
-    li {
-//        position: relative;
-        padding: 5px 15px;
-    }
-}
-
-a {
-    color:$white;
-    font-family: 'Inconsolata', monospace;
-    font-size: 20px;
-}
-
-li.hasSub {
-    ul.subnav {
-        li {
-            display: none;
-        }
-    }
-}
-
-nav {
-    #mobileNav {
-        @include size(medium) {
-            display: none;
-        }
-        @include size(large) {
-            display: none;
-        }
-    }
-}
-
-nav {
-    #mainNav {
-        @include size(small) {
-            display: none;
-        }
-        li {
+    li:hover {
+        ul {
             @include size(medium) {
                 display: inline-block;
             }
             @include size(large) {
-                display: inline-block;
+                display: block;
             }
         }
     }
+    a {
+        font-family: 'Inconsolata', monospace;
+        background-color: $ltBlue;
+        color: $white;
+        border-bottom: 0.05em solid $white;
+        text-decoration: none;
+        display: block;
+        padding: 4px 8px;
+        text-align: center;
+        &:hover {
+            background-color: $dkBlue;
+        }
+        @include size(medium) {
+            padding: 4px 10px;
+        }
+        @include size(large) {
+            padding: 4px 15px;
+        }
+        @include size(medium-up) {
+            border-left: 0.05em solid $white;
+            border-right: 0.05em solid $white;
+            border-bottom: none;
+        }
+    }
+    a.contact {
+        @include size(medium-up) {
+            border-right: none;
+        }
+    }
+    a.home {
+        @include size(medium) {
+            border-left: none;
+            padding-left: 8em; // I tried several different ways that I know to center the content for the medium screen menu, but none of them worked so in the interest of time, I resorted to just adding left padding so it at least appears to be centered until I can improve my skills with creating navigation bars.
+        }
+    }
+    > ul {
+        height: 28px;
+        @include clearfix;
+        background-color: $ltBlue;
+    }
+
+    > ul > li {
+        font-size: 1.15em;
+    }
+
+    > ul.closed > li {
+        display: none;
+        @include size(medium-up) {
+            display: block;
+            float: left;
+        }
+    }
+    
+    .submenu {
+        @include size(medium) {
+            display: inline-block;
+        }
+        @include size(large) {
+            display: none;
+        }
+        a {
+            border-bottom: none;
+            @include size(large) {
+                text-align: left;
+            }
+            @include size(medium-up) {
+                border:none;
+            }
+        }
+        li:last-child {
+            a {
+                border-bottom: 0.05em solid $white;
+                @include size(medium) {
+                    border:none;
+                }
+            }
+        }
+    }
+}
+
+#mobile-menu {
+    display: block;
+    @include size(medium-up) {
+        display: none;
+    }
+}
+
+#hamburger {
+    $icon-width: 22px;
+    float: left;
+    margin: 2px -#{$icon-width} 2px 0;
+    width: $icon-width;
+    height: 16px;
+    background-image: url('../img/Hamburger.png');
+    background-size: cover;
+}
+
+ul.open #hamburger {
+    $icon-width: 16px;
+    margin: 2px -#{$icon-width} 2px 0;
+    width: $icon-width;
+    height: $icon-width;
+    background-image: url('../img/X-Icon.png');
+}
+
+ul {
+    li {
+        li {
+            @include size(medium) {
+                display:inline-block;
+            }
+        }
+    }
+}
+
+.submenu {
+    background: $ltBlue;
+    @include size(medium) {
+        border: 0.05em solid $white;
+    }
+    
 }

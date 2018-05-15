@@ -9,12 +9,18 @@
             @content;
         }
     }
-    @else {
+    @else if $size == large {
         @media screen and (min-width: 64em) {
             @content;
         }
     }
+    @else if $size == medium-up {
+        @media screen and (min-width: 40em) {
+            @content;
+        }
+    }
 }
+
 
 @mixin clearfix {
     &:after {
