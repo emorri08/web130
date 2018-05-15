@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
 .col-lg-1 {
   float: left;
   width: 8.3333333333%; }
@@ -167,118 +167,122 @@
     float: left;
     width: 100%; } }
 
-body {
+html, body {
   margin: 0;
-  padding: 0;
-  background: #FEFDFF; }
+  padding: 0; }
 
 ul, li {
   list-style-type: none;
-  padding: 0;
-  margin: 0; }
-
-.nav ul {
-  background: #2DA9FF;
-  text-align: center; }
-
-.nav li {
-  font-family: 'Inconsolata', monospace;
-  text-align: left;
-  display: block;
-  border-bottom: 1px solid #FEFDFF; }
-  @media screen and (min-width: 64em) {
-    .nav li {
-      font-size: 22px;
-      line-height: 33px;
-      width: 130px;
-      display: inline-block;
-      margin-right: -4px;
-      border: 1px solid #FEFDFF; } }
-  @media screen and (min-width: 40em) and (max-width: 63.99em) {
-    .nav li {
-      display: inline-block;
-      font-size: 20px;
-      line-height: 30px; } }
-
-.nav li:hover {
-  background: #0A75BE; }
-
-.nav a {
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 27px;
-  color: #FEFDFF;
-  display: block;
-  padding-left: 15px;
-  transition: .3s background-color;
-  padding: 8px 10px;
-  text-align: center; }
-
-.nav a:hover {
-  background: #0A75BE; }
-
-.nav li li {
-  font-size: 18px;
-  line-height: 27px;
-  display: block;
-  border: none; }
-
-@media screen and (min-width: 64em) {
-  .nav > ul > li {
-    text-align: center; } }
-
-@media screen and (min-width: 64em) {
-  .nav > ul > li > a {
-    padding-left: 0; } }
-
-.nav li ul {
-  display: block;
-  width: inherit; }
-  @media screen and (min-width: 40em) and (max-width: 63.99em) {
-    .nav li ul {
-      position: absolute;
-      display: none; } }
-  @media screen and (min-width: 64em) {
-    .nav li ul {
-      position: absolute;
-      display: none; } }
-
-.nav li:hover {
-  background: #0A75BE; }
-  .nav li:hover ul {
-    display: block; }
-
-.nav li ul li {
-  display: block;
-  font-size: 16px;
-  line-height: 24px; }
+  margin: 0;
+  padding: 0; }
 
 @media screen and (min-width: 40em) and (max-width: 63.99em) {
-  li:hover {
+  nav li:hover ul {
     display: inline-block; } }
 
-.nav ul li.menu {
-  display: block; }
+@media screen and (min-width: 64em) {
+  nav li:hover ul {
+    display: block; } }
+
+nav a {
+  font-family: 'Inconsolata', monospace;
+  background-color: #2DA9FF;
+  color: #FFF;
+  border-bottom: 0.05em solid #FFF;
+  text-decoration: none;
+  display: block;
+  padding: 4px 8px;
+  text-align: center; }
+  nav a:hover {
+    background-color: #0A75BE; }
   @media screen and (min-width: 40em) and (max-width: 63.99em) {
-    .nav ul li.menu {
-      display: none; } }
+    nav a {
+      padding: 4px 10px; } }
   @media screen and (min-width: 64em) {
-    .nav ul li.menu {
+    nav a {
+      padding: 4px 15px; } }
+  @media screen and (min-width: 40em) {
+    nav a {
+      border-left: 0.05em solid #FFF;
+      border-right: 0.05em solid #FFF;
+      border-bottom: none; } }
+
+@media screen and (min-width: 40em) {
+  nav a.contact {
+    border-right: none; } }
+
+@media screen and (min-width: 40em) and (max-width: 63.99em) {
+  nav a.home {
+    border-left: none;
+    padding-left: 8em; } }
+
+nav > ul {
+  height: 28px;
+  background-color: #2DA9FF; }
+  nav > ul:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+nav > ul > li {
+  font-size: 1.15em; }
+
+nav > ul.closed > li {
+  display: none; }
+  @media screen and (min-width: 40em) {
+    nav > ul.closed > li {
+      display: block;
+      float: left; } }
+
+@media screen and (min-width: 40em) and (max-width: 63.99em) {
+  nav .submenu {
+    display: inline-block; } }
+
+@media screen and (min-width: 64em) {
+  nav .submenu {
+    display: none; } }
+
+nav .submenu a {
+  border-bottom: none; }
+  @media screen and (min-width: 64em) {
+    nav .submenu a {
+      text-align: left; } }
+  @media screen and (min-width: 40em) {
+    nav .submenu a {
+      border: none; } }
+
+nav .submenu li:last-child a {
+  border-bottom: 0.05em solid #FFF; }
+  @media screen and (min-width: 40em) and (max-width: 63.99em) {
+    nav .submenu li:last-child a {
+      border: none; } }
+
+#mobile-menu {
+  display: block; }
+  @media screen and (min-width: 40em) {
+    #mobile-menu {
       display: none; } }
 
 #hamburger {
   float: left;
-  margin: 2px -25px 2px 0;
-  width: 25px;
-  height: 25px;
-  background-image: url(../img/hamburger.png);
+  margin: 2px -22px 2px 0;
+  width: 22px;
+  height: 16px;
+  background-image: url("../img/Hamburger.png");
   background-size: cover; }
 
-#mobile-menu {
-  display: block; }
-  @media screen and (min-width: 64em) {
-    #mobile-menu {
-      display: none; } }
+ul.open #hamburger {
+  margin: 2px -16px 2px 0;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/X-Icon.png"); }
 
-li.products > a {
-  border-bottom: 1px solid #FEFDFF; }
+@media screen and (min-width: 40em) and (max-width: 63.99em) {
+  ul li li {
+    display: inline-block; } }
+
+.submenu {
+  background: #2DA9FF; }
+  @media screen and (min-width: 40em) and (max-width: 63.99em) {
+    .submenu {
+      border: 0.05em solid #FFF; } }
