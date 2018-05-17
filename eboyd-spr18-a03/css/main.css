@@ -172,53 +172,14 @@ html, body {
   padding: 0; }
 
 ul, li {
+  box-sizing: border-box;
   list-style-type: none;
   margin: 0;
   padding: 0; }
 
-@media screen and (min-width: 40em) and (max-width: 63.99em) {
-  nav li:hover ul {
-    display: inline-block; } }
-
-@media screen and (min-width: 64em) {
-  nav li:hover ul {
-    display: block; } }
-
-nav a {
-  font-family: 'Inconsolata', monospace;
-  background-color: #2DA9FF;
-  color: #FFF;
-  border-bottom: 0.05em solid #FFF;
-  text-decoration: none;
-  display: block;
-  padding: 4px 8px;
-  text-align: center; }
-  nav a:hover {
-    background-color: #0A75BE; }
-  @media screen and (min-width: 40em) and (max-width: 63.99em) {
-    nav a {
-      padding: 4px 10px; } }
-  @media screen and (min-width: 64em) {
-    nav a {
-      padding: 4px 15px; } }
-  @media screen and (min-width: 40em) {
-    nav a {
-      border-left: 0.05em solid #FFF;
-      border-right: 0.05em solid #FFF;
-      border-bottom: none; } }
-
-@media screen and (min-width: 40em) {
-  nav a.contact {
-    border-right: none; } }
-
-@media screen and (min-width: 40em) and (max-width: 63.99em) {
-  nav a.home {
-    border-left: none;
-    padding-left: 8em; } }
-
 nav > ul {
-  height: 28px;
-  background-color: #2DA9FF; }
+  height: 36px;
+  background: #2DA9FF; }
   nav > ul:after {
     content: "";
     display: table;
@@ -226,6 +187,14 @@ nav > ul {
 
 nav > ul > li {
   font-size: 1.15em; }
+  @media screen and (min-width: 40em) {
+    nav > ul > li {
+      display: inline-block;
+      width: 33.3333333333%; }
+      nav > ul > li a {
+        border-right: 0.05em solid #FFF; } }
+  nav > ul > li:last-child a {
+    border-right: none; }
 
 nav > ul.closed > li {
   display: none; }
@@ -234,36 +203,47 @@ nav > ul.closed > li {
       display: block;
       float: left; } }
 
-@media screen and (min-width: 40em) and (max-width: 63.99em) {
-  nav .submenu {
-    display: inline-block; } }
+nav a {
+  font-family: 'Inconsolata', monospace;
+  box-sizing: border-box;
+  height: 36px;
+  background: #2DA9FF;
+  color: #FFF;
+  border-bottom: 0.1em solid #FFF;
+  text-decoration: none;
+  display: block;
+  padding: 6px 8px;
+  text-align: center; }
+  nav a:hover {
+    background: #0A75BE; }
 
-@media screen and (min-width: 64em) {
-  nav .submenu {
-    display: none; } }
-
-nav .submenu a {
-  border-bottom: none; }
-  @media screen and (min-width: 64em) {
-    nav .submenu a {
-      text-align: left; } }
-  @media screen and (min-width: 40em) {
-    nav .submenu a {
-      border: none; } }
-
-nav .submenu li:last-child a {
-  border-bottom: 0.05em solid #FFF; }
+nav .subMenu {
+  display: none; }
   @media screen and (min-width: 40em) and (max-width: 63.99em) {
-    nav .submenu li:last-child a {
-      border: none; } }
+    nav .subMenu {
+      position: absolute;
+      left: 0;
+      top: 35px;
+      width: 100%; }
+      nav .subMenu li {
+        display: inline-block;
+        margin-right: -5px;
+        width: 25%; }
+        nav .subMenu li a {
+          border: 0; } }
+  nav .subMenu a {
+    border-bottom: none; }
+  @media screen and (max-width: 39.99em) {
+    nav .subMenu li:last-child a {
+      border-bottom: 0.05em solid #FFF; } }
 
-#mobile-menu {
+#mobileMenu {
   display: block; }
   @media screen and (min-width: 40em) {
-    #mobile-menu {
+    #mobileMenu {
       display: none; } }
 
-#hamburger {
+#burgerMenu {
   float: left;
   margin: 2px -22px 2px 0;
   width: 22px;
@@ -271,18 +251,8 @@ nav .submenu li:last-child a {
   background-image: url("../img/Hamburger.png");
   background-size: cover; }
 
-ul.open #hamburger {
+ul.open #burgerMenu {
   margin: 2px -16px 2px 0;
   width: 16px;
   height: 16px;
   background-image: url("../img/X-Icon.png"); }
-
-@media screen and (min-width: 40em) and (max-width: 63.99em) {
-  ul li li {
-    display: inline-block; } }
-
-.submenu {
-  background: #2DA9FF; }
-  @media screen and (min-width: 40em) and (max-width: 63.99em) {
-    .submenu {
-      border: 0.05em solid #FFF; } }

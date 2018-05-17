@@ -2,9 +2,9 @@
 
 $(document).ready(function () {
     let menu = $('nav > ul'),
-        menuLink = $('#mobile-menu a');
+        link = $('#mobileMenu a');
 
-    menuLink.on('click', function () {
+    link.on('click', function () {
         if (menu.hasClass('closed')) {
             menu.removeClass('closed');
             menu.addClass('open');
@@ -14,10 +14,10 @@ $(document).ready(function () {
         }
     });
 
-    let subMenu = $('.submenu'),
-        subMenuLink = $('.submenu-link');
+    let subMenu = $('.subMenu'),
+        subMenuLink = $('.subMenuLink');
 
     subMenuLink.on('click', function () {
-        $(this).parent().find('.submenu').toggle();
+        $(this).parent().find('.subMenu').toggle();
     });
 });

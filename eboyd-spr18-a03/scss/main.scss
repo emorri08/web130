@@ -4,116 +4,103 @@
 @import "grid";
 @import "util";
 
+$parentMenuItems: 3;
+$submenuMenuItems: 4;
+
 html, body {
     margin: 0;
     padding: 0;
 }
 
 ul, li {
+    box-sizing: border-box;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 nav {
-    li:hover {
-        ul {
-            @include size(medium) {
-                display: inline-block;
-            }
-            @include size(large) {
-                display: block;
-            }
-        }
+    > ul {
+        height: 36px;
+        @include clearfix;
+        background: $ltBlue;
     }
-    a {
-        font-family: 'Inconsolata', monospace;
-        background-color: $ltBlue;
-        color: $white;
-        border-bottom: 0.05em solid $white;
-        text-decoration: none;
-        display: block;
-        padding: 4px 8px;
-        text-align: center;
-        &:hover {
-            background-color: $dkBlue;
+    
+    > ul > li {
+        font-size: 1.15em;
+        @include size(medUp) {
+            display: inline-block;
+            width: percentage((1/$parentMenuItems));
+            a {
+                border-right: 0.05em solid $white;
+            }
         }
-        @include size(medium) {
-            padding: 4px 10px;
-        }
-        @include size(large) {
-            padding: 4px 15px;
-        }
-        @include size(medium-up) {
-            border-left: 0.05em solid $white;
-            border-right: 0.05em solid $white;
-            border-bottom: none;
-        }
-    }
-    a.contact {
-        @include size(medium-up) {
+        &:last-child a {
             border-right: none;
         }
     }
-    a.home {
-        @include size(medium) {
-            border-left: none;
-            padding-left: 8em; // I tried several different ways that I know to center the content for the medium screen menu, but none of them worked so in the interest of time, I resorted to just adding left padding so it at least appears to be centered until I can improve my skills with creating navigation bars.
-        }
-    }
-    > ul {
-        height: 28px;
-        @include clearfix;
-        background-color: $ltBlue;
-    }
-
-    > ul > li {
-        font-size: 1.15em;
-    }
-
+    
     > ul.closed > li {
         display: none;
-        @include size(medium-up) {
+        @include size(medUp) {
             display: block;
             float: left;
         }
     }
     
-    .submenu {
-        @include size(medium) {
-            display: inline-block;
+    a {
+        font-family: 'Inconsolata', monospace;
+        box-sizing: border-box;
+        height: 36px;
+        background: $ltBlue;
+        color: $white;
+        border-bottom: 0.1em solid $white;
+        text-decoration: none;
+        display: block;
+        padding: 6px 8px;
+        text-align: center;
+        &:hover {
+            background: $dkBlue;
         }
-        @include size(large) {
-            display: none;
+    }
+    
+    .subMenu {
+        display: none;
+        @include size(med) {
+            position: absolute;
+            left: 0;
+            top: 35px;
+            width: 100%;
+            li {
+                display: inline-block;
+                margin-right: -5px;
+                width: percentage((1/$submenuMenuItems));
+                a {
+                    border: 0;
+                }
+            }
         }
         a {
             border-bottom: none;
-            @include size(large) {
-                text-align: left;
-            }
-            @include size(medium-up) {
-                border:none;
-            }
         }
         li:last-child {
             a {
-                border-bottom: 0.05em solid $white;
-                @include size(medium) {
-                    border:none;
+                @include size(sm) {
+                    border-bottom: 0.05em solid $white;
                 }
             }
         }
     }
 }
 
-#mobile-menu {
+#mobileMenu {
     display: block;
-    @include size(medium-up) {
+    @include size(medUp) {
         display: none;
     }
 }
 
-#hamburger {
+#burgerMenu {
     $icon-width: 22px;
     float: left;
     margin: 2px -#{$icon-width} 2px 0;
@@ -123,7 +110,7 @@ nav {
     background-size: cover;
 }
 
-ul.open #hamburger {
+ul.open #burgerMenu {
     $icon-width: 16px;
     margin: 2px -#{$icon-width} 2px 0;
     width: $icon-width;
@@ -131,20 +118,3 @@ ul.open #hamburger {
     background-image: url('../img/X-Icon.png');
 }
 
-ul {
-    li {
-        li {
-            @include size(medium) {
-                display:inline-block;
-            }
-        }
-    }
-}
-
-.submenu {
-    background: $ltBlue;
-    @include size(medium) {
-        border: 0.05em solid $white;
-    }
-    
-}
