@@ -216,6 +216,9 @@ nav a {
   text-align: center; }
   nav a:hover {
     background: #0A75BE; }
+  @media screen and (min-width: 64em) {
+    nav a {
+      border-bottom: none; } }
 
 nav .subMenu {
   display: none; }
@@ -256,3 +259,20 @@ ul.open #burgerMenu {
   width: 16px;
   height: 16px;
   background-image: url("../img/X-Icon.png"); }
+
+@media screen and (min-width: 64em) {
+  .home {
+    width: 75px; } }
+
+@media screen and (min-width: 64em) {
+  .products, .subMenu {
+    width: 125px; } }
+
+@media screen and (min-width: 64em) {
+  .contact {
+    width: 100px; } }
+
+@media screen and (min-width: 64em) {
+  .submenu li {
+    text-align: left;
+    padding-left: 15px; } }
